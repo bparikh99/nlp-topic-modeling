@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+<style type="text/css">
+    *{
+            font-family: 'Montserrat', sans-serif;
+        
+    }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #2471A3;
+  color: black;
+}
+
+.topnav a.active {
+  /* background-color: #2471A3; */
+  color: white;
+}
+.top{
+    padding-left: 20px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="active" href="index.html">Back To</a>
+  <a class="top" href="#Topics">Topics</a>
+  <a href="#Wordcloud">Wordcloud</a>
+  <a href="#most">Most Common Words</a>
+</div>
+
+<div style="padding-left:16px">
+  <h1 align="center" style="font-weight: bold;">Insights From Corpus/Document</h1>
+</div>
+<div>
+    <p>{{ name }}</p>
+    
+    <img src={{ url}} alt="Chart" height="42" width="42">
+</div>
+
+</body>
+</html>
