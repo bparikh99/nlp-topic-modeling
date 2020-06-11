@@ -11,7 +11,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction import text 
 from collections import Counter
 from wordcloud import WordCloud
-from PIL import Image
+from os import path
 
 class wordtoplot:
     def __init__(self,doc):
@@ -51,14 +51,14 @@ class wordtoplot:
         return stop_words,doc_df
 
     def word_plot(self):
+        d="E:/Notebook-file/NLP.idea/static/images"
         wc = WordCloud(stopwords=self.make_df()[0], background_color="white", colormap="Dark2",
                 max_font_size=150, random_state=42)
         plt.rcParams['figure.figsize'] = [15, 6]
 
         cloud=wc.generate(self.make_df()[1].transcript['doc'])
         # plt.title("More Often Words With Result")
-        cloud.to_file('/static/images/cloud.png')
-        x=Image.open('/static/images/cloud.png')
-        return x
+        return cloud.to_file(path.join(d,'cloud.png')
+       
 
 
