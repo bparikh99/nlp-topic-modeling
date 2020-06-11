@@ -20,7 +20,7 @@ def predict():
         obj.do_lemma()
         obj.make_df()
         obj.word_plot()
-    return render_template('predict.html',name = 'new_plot', url ='/static/images/cloud.png')
+    return render_template('predict.html',name = 'Documented Image', url ='/static/images/cloud.png')
 
 
 if __name__ == "__main__":
