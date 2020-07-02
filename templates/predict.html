@@ -39,6 +39,43 @@ body {
 .top{
     padding-left: 20px;
 }
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.row {
+  display: flex;
+}
+
+/* Create three equal columns that sits next to each other */
+.column {
+  flex: 50%;
+  padding: 15px;
+}
+.topics{
+  text-align: center;
+}
+.topics .buttons
+{
+  display: inline-block;
+  background-color: #4ec0c4;
+  font-size:0.5em;
+  margin-top: 5px;
+  width: 100px;
+  height: 50px;
+  border: 2px solid #fff;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  line-height: 56px;
+  box-sizing: border-box;
+  border-radius: 50px;
+  outline: none;
+  transition: all ease 0.5s;
+}
 
 </style>
 </head>
@@ -48,17 +85,29 @@ body {
   <a class="active" href="index.html">Back To</a>
   <a class="top" href="#Topics">Topics</a>
   <a href="#Wordcloud">Wordcloud</a>
-  <a href="#most">Most Common Words</a>
+  <a href="/most">Most Common Words</a>
 </div>
 
 <div style="padding-left:16px">
   <h1 align="center" style="font-weight: bold;">Insights From Corpus/Document</h1>
 </div>
-<div>
-    <p>{{ name }}</p>
-    
-    <img src={{ url}} alt="Chart" width=50%>
+  <div class="row">
+    <div class="column" style="font-weight: bold;">
+      <h3 align="center" style="font-weight: bold;">Word-cloud From Text</h3>
+    <img src="{{url_for('static', filename='/images/cloud.png')}}" alt="Chart"  style="margin-top:50px" width="100%" >
 </div>
-
+  <div class="column">
+    <h3 align="center" style="font-weight: bold;">Most Number Of Words</h3>
+  <img src= "{{url_for('static', filename='/images/common.png')}}" alt="Chart" width="100%">
+  <!-- <img src= "common.png" alt="Chart" width="100%" style="margin-top:50px"> -->
+  </div><br>
+  </div>
+  <section class="topics" >
+    <h3 style="text-align: center; font-weight:bold">Your Topics Contains</h3>
+    {%for topic in topics%}
+      <button class="buttons">{{topic}}</button>
+    {%endfor%}
+  </section>
 </body>
+
 </html>
