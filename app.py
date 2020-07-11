@@ -38,13 +38,5 @@ def predict():
         topics=obj.get_topics()
     return render_template('predict.html',topics=topics)
 
-# def predict2():
-#     with app.test_request_context():
-#         obj=TestView()
-#         topics=obj.get()
-#     return render_template('predict.html',topics=topics)
-
 if __name__ == "__main__":
-    app.jinja_env.auto_reload = True
-    app.config['TEMPLATES_AUTO_RELOAD'] = True
     app.run(host='localhost', debug=True)
